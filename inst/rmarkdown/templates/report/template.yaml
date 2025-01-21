@@ -1,0 +1,3 @@
+name: "MosaBiome Custom Template"
+description: "A template that provides a standardized R Markdown document setup for the projects within MosaBiome Analytics."
+create_dir: false

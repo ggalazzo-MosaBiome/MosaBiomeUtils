@@ -1,0 +1,4 @@
+Binding: MosaBiomeUtils
+Title: MosaBiome Utulity Functions
+Description: This package is meant to standardize the structure across projects.
+CreateProjectFunction: MosaBiomeUtils::create_new_project

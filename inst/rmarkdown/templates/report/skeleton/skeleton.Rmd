@@ -1,0 +1,25 @@
+---
+title: "Analysis_title"
+project_id: "Project_id"
+project_name: "Project_name"
+author: "`r getOption('MosaBiomeUtils.author', 'Unknown Author')`"
+date: "`r format(Sys.Date(), '%d-%b-%Y')`"
+status: confidential
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    code_folding: hide
+    fig_height: 10
+    fig_width: 10
+  rmdformats::downcute:
+    self_contained: false
+    thumbnails: false
+    lightbox: true
+    gallery: false
+    highlight: tango
+knit: (function(input_file, ...){setwd(here::here());config <- yaml::read_yaml("project_config.yml");rmarkdown::render(input_file, output_dir = config$output_dir, envir=new.env())})
+editor_options: 
+  chunk_output_type: console
+---
