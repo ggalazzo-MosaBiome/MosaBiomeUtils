@@ -14,12 +14,12 @@ MBU_new_analysis <- function(file_name) {
     stop("The 'fs' package is required but not installed. Install it with install.packages('fs').")
   }
 
-  if (grepl("[^A-Za-z0-9_\\s.]", file_name) || grepl("\\s", file_name)) {
+  if (grepl("^A-Za-zα-ωΑ-Ω0-9_\\s.", file_name) || grepl("\\s", file_name)) {
     # Replace white spaces with underscores
     filename <- gsub("\\s+", "_", file_name)
 
     # Replace special characters and periods with hyphens
-    filename <- gsub("[^A-Za-z0-9_\\s.]", "-", filename)
+    filename <- gsub("[^A-Za-zα-ωΑ-Ω0-9_\\s.]", "-", filename)
 
     # Set title to the original value for display
     title <- file_name

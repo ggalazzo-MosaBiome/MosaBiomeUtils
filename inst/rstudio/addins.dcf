@@ -1,0 +1,4 @@
+Name: Wrap in quotes
+Description: Add quote to all element in a vector
+Binding: wrapInQuote
+Interactive: false
