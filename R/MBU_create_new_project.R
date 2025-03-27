@@ -13,6 +13,8 @@ MBU_create_new_project <- function(path, project_id, project_name, ...) {
   # Retrieve the author name
   author_name <- getOption("MosaBiomeUtils.author", "Unknown Author")
 
+
+
   if (missing(project_id)) {
     cat("Argument 'project_id' is missing. Would you like to enter the id?\n")
     x <- as.numeric(readline(prompt = "Type project_id: "))
