@@ -1,0 +1,14 @@
+Name: Wrap in quotes
+Description: Add quote to all element in a vector
+Binding: wrapInQuote
+Interactive: false
+
+Name: Underline for HMTL
+Description: add tags to show selected text underlined in HTML report
+Binding: underlineHtml
+Interactive: false
+
+Name: MosaBiome Style Report
+Description: Format the current file using MosaBiome styler.
+Binding: MB_style_report
+Interactive: false

@@ -59,6 +59,18 @@ MBU_create_new_project <- function(path, project_id, project_name, ...) {
   config_file <- file.path(path, "project_config.yml")
   file.create(config_file)
   file.create(file.path(path, "readme.txt"))
+  file.create(file.path(path, ".header.html"))
+
+  # Write header file
+  writeLines(
+    c(
+      '<hr/>',
+      '  <h3 style="text-align:center;color: gray;font-size:14px;">',
+      '    <b>MosaBiome</b> Statistical Analysis Report',
+      '  </h3>',
+      '<hr/>'
+    )
+  )
 
   # Write the Rproj file
   writeLines(

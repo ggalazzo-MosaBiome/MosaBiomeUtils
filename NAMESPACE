@@ -2,3 +2,5 @@
 
 export(MBU_create_new_project)
 export(MBU_new_analysis)
+export(MB_style_report)
+export(report_custom_transformers)
