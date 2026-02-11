@@ -1,0 +1,87 @@
+---
+title: "Analysis_title"
+subtitle: "Project_name"
+author: "Author_name"
+date: today
+date-format: "DD-MMM-YYYY"
+params:
+  project_id: "Project_id"
+  project_name: "Project_name"
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    toc-expand: 2
+    code-fold: true
+    code-tools: true
+    code-summary: "Show code"
+    fig-width: 10
+    fig-height: 10
+    theme:
+      light: cosmo
+      dark: darkly
+    self-contained: false
+    smooth-scroll: true
+    link-external-icon: true
+    link-external-newwindow: true
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: visual
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Load required packages
+library(here)
+
+# Set default chunk options
+knitr::opts_chunk$set(
+  fig.path = here::here("4.results_files", params$project_id, "4.1.plots/"),
+  dev = c("png", "svg"),
+  dpi = 300
+)
+```
+
+## Introduction
+
+Describe the purpose and objectives of this analysis.
+
+## Data
+
+```{r}
+#| label: load-data
+
+# Load your data here
+# data <- readRDS(here::here("1.data", "1.1.data_analysis_ready", "your_data.rds"))
+```
+
+## Methods
+
+Describe the statistical methods used.
+## Results
+
+### Main Findings
+
+```{r}
+#| label: main-analysis
+
+# Your analysis code here
+```
+
+## Conclusions
+
+Summarize key findings and implications.
+
+## Session Info
+
+```{r}
+#| label: session-info
+#| code-fold: true
+
+sessionInfo()
+```

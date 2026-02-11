@@ -1,6 +1,96 @@
-#' Custom Styler Function
+#' MosaBiome Custom Code Style Transformers
 #'
-#' @return A named list of styler transformers
+#' @description
+#' Returns a set of custom \pkg{styler} transformers that implement the MosaBiome
+#' code formatting conventions. These transformers extend the tidyverse style
+#' with additional rules for improved readability in statistical reports.
+#'
+#' @return A named list of styler transformer functions that can be passed to
+#'   \code{\link[styler]{style_text}} or \code{\link[styler]{style_file}} via
+#'   the \code{transformers} argument.
+#'
+#' @details
+#' \strong{Style Rules Applied:}
+#'
+#' The MosaBiome style extends \code{styler::tidyverse_style(strict = TRUE)}
+#' with the following additional formatting rules:
+#'
+#' \enumerate{
+#'   \item \strong{Newlines After Commas}: Forces a newline after each comma
+#'     in function calls. This improves readability for functions with multiple
+#'     arguments like \code{data.frame()}, \code{mutate()}, etc.
+#'
+#'   \item \strong{Newlines After Pipes}: Forces a newline after each pipe
+#'     operator (\code{\%>\%}). This ensures each step in a pipeline is on
+#'     its own line for better readability.
+#'
+#'   \item \strong{Function Argument Formatting}: Places opening and closing
+#'     parentheses on their own lines for function calls with multiple arguments.
+#' }
+#'
+#' \strong{Example Transformation:}
+#'
+#' \emph{Before:}
+#' \preformatted{
+#' data \%>\% filter(x > 0) \%>\% mutate(y = x * 2, z = y + 1) \%>\% select(y, z)
+#' }
+#'
+#' \emph{After:}
+#' \preformatted{
+#' data \%>\%
+#'   filter(x > 0) \%>\%
+#'   mutate(
+#'     y = x * 2,
+#'     z = y + 1
+#'   ) \%>\%
+#'   select(
+#'     y,
+#'     z
+#'   )
+#' }
+#'
+#' \strong{Usage with styler:}
+#'
+#' You can use these transformers directly with styler functions:
+#'
+#' \preformatted{
+#' # Style a text string
+#' styler::style_text(
+#'   "x\%>\%y\%>\%z",
+#'   transformers = report_custom_transformers()
+#' )
+#'
+#' # Style a file
+#' styler::style_file(
+#'   "my_script.R",
+#'   transformers = report_custom_transformers()
+#' )
+#' }
+#'
+#' @section Dependencies:
+#'
+#' Requires the \pkg{styler} package to be installed.
+#'
+#' @examples
+#' \dontrun{
+#' # Get the transformers
+#' transformers <- report_custom_transformers()
+#'
+#' # Use with style_text
+#' code <- "df %>% filter(x > 0) %>% select(a, b, c)"
+#' styler::style_text(code, transformers = transformers)
+#'
+#' # The MB_style_report() addin uses these transformers internally
+#' }
+#'
+#' @seealso
+#' \code{\link{MB_style_report}} addin that applies these transformers
+#'
+#' \code{\link[styler]{tidyverse_style}} the base style being extended
+#'
+#' \code{\link[styler]{style_text}} for programmatic styling
+#'
+#' @family code formatting
 #' @export
 report_custom_transformers <- function() {
   transformers <- styler::tidyverse_style(strict = TRUE)

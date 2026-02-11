@@ -1,0 +1,5 @@
+name: MosaBiome Analysis Report
+description: >
+  Standard Quarto template for MosaBiome statistical analysis reports.
+  Includes project metadata, custom styling, and output directory configuration.
+create_dir: false

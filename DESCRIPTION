@@ -1,11 +1,25 @@
 Package: MosaBiomeUtils
-Title: What the Package Does (One Line, Title Case)
+Title: Standardized Project Structure and Workflow for MosaBiome Statistical Analysis
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Authors@R:
+    person("MosaBiome", email = "info@mosabiome.com", role = c("aut", "cre"))
+Description: Provides utilities to standardize project structure and workflow for
+    statistical analysis within MosaBiome. Includes project template creation,
+    Quarto/RMarkdown report templates, RStudio/Positron addins for code formatting,
+    and author name management across sessions.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
+Imports:
+    fs,
+    here,
+    yaml,
+    rstudioapi,
+    quarto
+Suggests:
+    styler,
+    rmarkdown,
+    knitr,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

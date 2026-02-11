@@ -12,3 +12,8 @@ Name: MosaBiome Style Report
 Description: Format the current file using MosaBiome styler.
 Binding: MB_style_report
 Interactive: false
+
+Name: Render Quarto Report
+Description: Render current Quarto document to project output directory
+Binding: MBU_render_report
+Interactive: false
